@@ -1,6 +1,6 @@
 {
-    "name": "niels-filmer/model-lister",
-    "description": "",
+    "name": "niels-filmer/eloquent-lister",
+    "description": "A module that turns eloquent models into tables",
     "authors": [
         {
             "name": "Niels Filmer",
