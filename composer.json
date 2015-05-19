@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "NielsFilmer": "src/NielsFilmer"
+            "NielsFilmer\\": "src/NielsFilmer"
         }
     },
     "minimum-stability": "stable"
