@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ModelListerServiceProvider extends ServiceProvider {
+class EloquentListerServiceProvider extends ServiceProvider {
 
     /**
      * Indicates if loading of the provider is deferred.
