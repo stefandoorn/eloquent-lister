@@ -1,5 +1,5 @@
 {
-    "name": "niels-filmer/eloquent-lister",
+    "name": "nielsfilmer/eloquent-lister",
     "description": "A module that turns eloquent models into tables",
     "authors": [
         {
