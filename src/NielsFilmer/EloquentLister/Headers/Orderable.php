@@ -15,9 +15,10 @@ class Orderable extends BaseHeader {
     public function makeCell()
     {
         $url = $this->makeOrderableLink($this->request, $this->attribute);
+        $order = $this->currentOrder($this->request, $this->attribute);
         $display = $this->display;
 
-        return view(static::$view, compact('url', 'display'));
+        return view(static::$view, compact('url', 'display', 'order'));
     }
 
 
@@ -36,7 +37,7 @@ class Orderable extends BaseHeader {
         foreach($request->query as $key=>$value) {
             if($key == $order_query) {
                 $order = explode('|', $value);
-                if(isset($order[1]) && $order[1] == 'asc') {
+                if($order[0] == $attribute && isset($order[1]) && $order[1] == 'asc') {
                     $new_query[] = "{$key}={$attribute}|desc";
                 } else {
                     $new_query[] = "{$key}={$attribute}|asc";
@@ -59,5 +60,29 @@ class Orderable extends BaseHeader {
 
         $new_query = implode('&', $new_query);
         return url($request->decodedPath() . "?{$new_query}");
+    }
+
+
+    /**
+     * Reads the current order from the Request
+     *
+     * @param Request $request
+     * @param $attribute
+     * @return string|null
+     */
+    protected function currentOrder(Request $request, $attribute)
+    {
+        $order_query = config(static::$query_setting);
+
+        foreach($request->query as $key=>$value) {
+            if($key == $order_query) {
+                $order = explode('|', $value);
+                if($order[0] == $attribute && isset($order[1])) {
+                    return $order[1];
+                }
+            }
+        }
+
+        return null;
     }
 }

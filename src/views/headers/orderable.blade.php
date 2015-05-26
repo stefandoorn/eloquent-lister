@@ -1,1 +1,1 @@
-<a href="{{ $url }}">{{ $display }}</a>
+<a href="{{ $url }}" class="lister-order-link" data-order="{{ $order }}">{{ $display }}</a>
