@@ -160,7 +160,7 @@ class ListBuilder {
      */
     public function getCreateUrl()
     {
-        return url() . "/{$this->getSlug()}/create";
+        return url("/{$this->getSlug()}/create");
     }
 
 
