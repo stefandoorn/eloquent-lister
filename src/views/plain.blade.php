@@ -3,7 +3,7 @@
         <thead>
         <tr>
             @foreach($columns as $column)
-                <th>{!! $column->makeHeader()->render() !!}</th>
+                <th @if($column->getOption('width'))width="{{ $column->column('width') }}"@endif>{!! $column->makeHeader()->render() !!}</th>
             @endforeach
         </tr>
         </thead>

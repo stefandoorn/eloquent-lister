@@ -75,7 +75,7 @@ abstract class BaseColumn {
      *
      * @return mixed
      */
-    protected function getOption($key, $default = null)
+    public function getOption($key, $default = null)
     {
         return array_get($this->options, $key, $default);
     }
