@@ -17,7 +17,7 @@ class Plain extends BaseColumn {
         $attribute = $this->attribute;
         $raw = $this->getOption('raw');
         $accessor = $this->accessor;
-        $value = $accessor($row->$attribute);
+        $value = $accessor($row->$attribute, $row);
         return view(static::$view, compact('raw', 'value'));
     }
 
