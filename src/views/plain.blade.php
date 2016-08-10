@@ -1,3 +1,4 @@
+<div class="table-responsive">
 @if(count($collection))
     <table class="table table-hover">
         <thead>
@@ -22,3 +23,4 @@
 @else
     <p>There are no items to display</p>
 @endif
+</div>
