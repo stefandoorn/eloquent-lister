@@ -75,7 +75,7 @@ class ListBuilder {
      */
     protected function buildColumns(TableList $list)
     {
-        $column_data = $list->getColumns();
+        $column_data = $list->getColumns($this->getSetting('data'));
         $factory = $this->factory;
         $columns = [];
 

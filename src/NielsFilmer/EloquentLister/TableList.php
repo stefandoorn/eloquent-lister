@@ -12,6 +12,11 @@ abstract class TableList {
     protected $columns = [];
 
     /**
+     * @var array
+     */
+    protected $data = [];
+
+    /**
      * The function that gets called to build the table.
      * All Columns should be added here.
      *
@@ -45,10 +50,13 @@ abstract class TableList {
     /**
      * Getter for columns
      *
+     * @param array $data
+     *
      * @return array
      */
-    final public function getColumns()
+    final public function getColumns(array $data = [])
     {
+        $this->data = $data;
         $this->buildTable();
         return $this->columns;
     }
@@ -75,5 +83,16 @@ abstract class TableList {
                 return $value;
             };
         }
+    }
+
+
+    /**
+     * @param $key
+     *
+     * @return mixed
+     */
+    protected function getData($key)
+    {
+        return array_get($this->data, $key);
     }
 }
