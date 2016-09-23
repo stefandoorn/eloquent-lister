@@ -10,6 +10,13 @@ class Actions extends BaseColumn {
      */
     protected static $view = 'eloquent-lister::cells.actions';
 
+    /**
+     * @var array
+     */
+    protected $default_options = [
+        'width' => '50px'
+    ];
+
 
     /**
      * @param Model $model

@@ -42,6 +42,11 @@ abstract class BaseColumn {
     protected $header;
 
     /**
+     * @var array
+     */
+    protected $default_options = [];
+
+    /**
      * @param $attribute
      * @param callable $accessor
      * @param array $options
@@ -50,7 +55,7 @@ abstract class BaseColumn {
     {
         $this->attribute = $attribute;
         $this->accessor = $accessor;
-        $this->options = $options;
+        $this->options = array_merge($this->default_options, $options);
     }
 
     /**
