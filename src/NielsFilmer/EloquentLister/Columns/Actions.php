@@ -14,7 +14,7 @@ class Actions extends BaseColumn {
      * @var array
      */
     protected $default_options = [
-        'width' => '50px'
+        'width' => '100px'
     ];
 
 
