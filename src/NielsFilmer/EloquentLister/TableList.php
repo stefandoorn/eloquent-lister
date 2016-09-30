@@ -3,6 +3,7 @@
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use NielsFilmer\EloquentLister\Exceptions\ModelListerException;
 
 abstract class TableList {
 
@@ -31,10 +32,16 @@ abstract class TableList {
      * @param $attribute
      * @param $display
      * @param array $options
+     *
      * @return TableList
+     * @throws ModelListerException
      */
     protected function addColumn( $attribute, $display, array $options = [] )
     {
+        if($attribute == 'delete') {
+            throw new ModelListerException('"delete" is a reserved attribute and cannot be used');
+        }
+
         $this->columns[] = [
             'type'      => array_get($options, 'type', 'plain'),
             'attribute' => $attribute,
