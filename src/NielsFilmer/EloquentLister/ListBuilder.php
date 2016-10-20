@@ -105,8 +105,9 @@ class ListBuilder {
             ? $this->makePagination($this->collection)
             : '';
         $collection = $this->collection;
+        $view = $this->getSetting('view', 'eloquent-lister::plain');
 
-        return view( 'eloquent-lister::plain', compact( 'columns', 'collection', 'slug', 'pagination' ) );
+        return view($view, compact( 'columns', 'collection', 'slug', 'pagination' ) );
     }
 
 
