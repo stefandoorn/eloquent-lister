@@ -17,7 +17,7 @@ class Checkbox extends BaseColumn {
         $attribute = $this->attribute;
         $accessor = $this->accessor;
         $value = $accessor($row->$attribute, $row);
-        return view(static::$view, compact('value'));
+        return view(static::$view, compact('value', 'attribute'));
     }
 
 }

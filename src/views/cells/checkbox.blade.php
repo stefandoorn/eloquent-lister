@@ -1,1 +1,1 @@
-<input type="checkbox" data-id="{{ $value }}">
+<input class="checkbox-{{ $attribute }}" type="checkbox" data-id="{{ $value }}">
