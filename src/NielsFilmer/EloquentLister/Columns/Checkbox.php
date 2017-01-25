@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class Plain extends BaseColumn {
+class Checkbox extends BaseColumn {
 
     protected static $view = 'eloquent-lister::cells.checkbox';
 
